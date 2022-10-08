@@ -1,36 +1,46 @@
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <queue>
+#include <vector>
 using namespace std;
+
+int N,I;
+vector<int> toPoint[205];
+
+bool BFS(int Start)
+{
+    queue<int> Q;
+    Q.push(Start);
+    int visit[205] = {0};
+
+    while (!Q.empty()) {
+        int cur = Q.front();
+        Q.pop();
+
+        for (int &nxt : toPoint[cur]) {
+            if (visit[nxt] == 0) {
+                Q.push(nxt);
+                if (visit[cur] == 1) visit[nxt] = 2;
+                else visit[nxt] = 1;
+            }
+            else if (visit[nxt] == visit[cur])
+                return false;
+        }
+    }
+    return true;
+}
 int main()
 {
-   int n;
-   while(cin>>n,n){
-      int *nbs=new int[n*n];
-      #define nbs(x,y) nbs[x*n+y]
-      for(int i=0;i<n*n;i++)nbs[i]=0;
-      int m;cin>>m;
-      while(m--){
-          int x,y;cin>>x>>y;
-          nbs(x,y)=nbs(y,x)=1;
-      }
-      vector<int> clr(n);clr[0]=1;
-      stack<int> stk;stk.push(0);
-      bool ans=true;  
-     while(stk.size()){
-          int a=stk.top();stk.pop();
-          for(int k=0;k<n;k++){
-            if(!nbs(a,k))continue;
-            if(clr[k]==0){
-               clr[k]=-1*clr[a];
-               stk.push(k);
-            }else if(clr[k]==clr[a]){
-               ans=false;
-               break;
-            }
-          }
-          if(ans==false)break;
-     }
-     delete[] nbs;
-     if(ans)cout<<"BICOLORABLE"<<endl;
-     else cout<<"NOT BIOCOLORABLE."<<endl;
-   }
+  //  freopen ("input.txt","rt",stdin);
+    while (scanf("%d", &N)) {
+        if (!N) break;
+        for (auto &v : toPoint) v.clear();
+        scanf("%d", &I);
+        int p1, p2;
+        for (int i=0; i<I; ++i) {
+            scanf("%d %d", &p1, &p2);
+            toPoint[p1].push_back(p2);
+            toPoint[p2].push_back(p1);
+        }
+        printf("%s\n", BFS(p1) ? "BICOLORABLE." : "NOT BICOLORABLE.");
+    }
 }
