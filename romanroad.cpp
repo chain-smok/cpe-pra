@@ -22,7 +22,7 @@ int main()
      route1[0]=city1[0];
      while(route1[p1]!='R'){
           route1[p1+1]=parent[route1[p1]];
-          p1++;
+          p1++;//找出城市到羅馬的路線
      }
      route2[0]=city2[0];
      while(route2[p2]!='R'){

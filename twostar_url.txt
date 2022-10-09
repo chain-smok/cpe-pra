@@ -2,3 +2,5 @@ EUCLID problem:https://hackmd.io/@nckuacm/ryLIV6BYI/%2F%40nckuacm%2FSJiGbcM2U
 queue:https://yuihuang.com/cpp-stl-queue/
 vector:https://gordonfang-85054.medium.com/c-vetor%E6%87%89%E7%94%A8%E4%BB%8B%E7%B4%B9-2e381e847ddc
 Bicolor:http://programming-study-notes.blogspot.com/2014/02/uva-10004-bicoloring.html
+roman:https://yuihuang.com/zj-d335/
+subsequence:https://blog.csdn.net/to_xidianhph_youth/article/details/37548485
