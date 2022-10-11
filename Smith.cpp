@@ -1,5 +1,7 @@
+//位數和=質因數和=>Smith number(質數不算)
 #include <bits/stdc++.h>
 using namespace std;
+//位數和
 int DigitSum(int n){
   int sum=0;
   while(n>0){
@@ -8,6 +10,7 @@ int DigitSum(int n){
   }
   return sum;              
 }
+//質因數和
 int FactorDigitSum(int n){
   int sum=0;
   int tmp=n;
