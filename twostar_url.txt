@@ -5,3 +5,4 @@ Bicolor:http://programming-study-notes.blogspot.com/2014/02/uva-10004-bicoloring
 roman:https://yuihuang.com/zj-d335/
 subsequence:https://blog.csdn.net/to_xidianhph_youth/article/details/37548485
 minimal coverage:https://knightzone.studio/2012/04/06/1689/uva%EF%BC%9A10020%EF%BC%8Dminimal-coverage/
+product digit:https://blog.csdn.net/keshuai19940722/article/details/10243909
